@@ -1,12 +1,25 @@
-const config = require('./config');
-const {helloRoute} = require('./src/getRoutes');
+const {config} = require('./config');
+const {app} = require('./src/app');
 const {Server} = require('hapi');
 
 const server = new Server();
-server.connection(config);
+const {devServer, reporters: options} = config;
 
-helloRoute(server);
+// server boiler-plate
+server.connection(devServer);
+server.register({
+	register: require('good'),
+	options
+}, e => {
+	if (e) {
+		console.err(e);
+		return;
+	}
 
-server.start(() => {
-	console.log(`Started at: ${server.info.uri}`);
+	// otherwise ...
+	app(server);
+
+	server.start(() => {
+		console.log(`Started at: ${server.info.uri}`);
+	});
 });

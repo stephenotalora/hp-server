@@ -5,6 +5,7 @@ const helloRoute = (server) => {
 		method: 'GET',
 		path: '/',
 		handler: (req, resp) => {
+			server.log('error', 'oh noes!');
 			resp('hello world!');
 		}
 	});
