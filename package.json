@@ -1,0 +1,20 @@
+{
+  "name": "hp-server",
+  "version": "0.1.0",
+  "description": "test node server with hapi.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "server"
+  ],
+  "author": "Jonathan S. Otalora",
+  "license": "MIT",
+  "devDependencies": {
+    "mocha": "^3.1.2"
+  },
+  "dependencies": {
+    "hapi": "^15.1.1"
+  }
+}
