@@ -4,7 +4,8 @@
   "description": "test node server with hapi.js",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "server-dev": "nodemon index.js",
+    "test": "node_modules/ .bin/mocha -w"
   },
   "keywords": [
     "server"
@@ -12,6 +13,7 @@
   "author": "Jonathan S. Otalora",
   "license": "MIT",
   "devDependencies": {
+    "chai": "^3.5.0",
     "mocha": "^3.1.2"
   },
   "dependencies": {
