@@ -10,8 +10,7 @@ const reporters = {
 	reporters: {
 		console: [{
 			module: 'good-console',
-			args: [{ log: '*', request: '*' }]
-		}]
+		}, 'stdout']
 	}
 };
 
