@@ -4,6 +4,13 @@ const devServer = {
 	port: 8080
 };
 
+// mongo persistence
+const persistence = {
+	host: `mongodb://localhost`,
+	port: 27017,
+	db: 'test'
+};
+
 
 // log reporters
 const reporters = {
@@ -16,5 +23,6 @@ const reporters = {
 
 module.exports = {
 	devServer,
+	persistence,
 	reporters
 };

@@ -1,5 +1,5 @@
-const {config} = require('./config');
 const {app} = require('./src/app');
+const {config} = require('./config');
 const {Server} = require('hapi');
 
 const server = new Server();
@@ -23,3 +23,5 @@ server.register({
 		console.log(`Started at: ${server.info.uri}`);
 	});
 });
+
+module.exports = server;

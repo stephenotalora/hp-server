@@ -1,10 +1,11 @@
 {
   "name": "hp-server",
   "version": "0.1.0",
-  "description": "test node server with hapi.js",
+  "description": "test node server with hapi.js && mongodb",
   "main": "index.js",
   "scripts": {
     "server-dev": "nodemon index.js",
+    "server-debug": "iron-node index.js",
     "test": "node_modules/ .bin/mocha -w"
   },
   "keywords": [
@@ -19,6 +20,8 @@
   "dependencies": {
     "good": "^7.0.2",
     "good-console": "^6.1.2",
-    "hapi": "^15.1.1"
+    "hapi": "^15.1.1",
+    "joi": "^9.2.0",
+    "mongodb": "^2.2.11"
   }
 }
