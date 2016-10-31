@@ -1,3 +1,7 @@
+/**
+ * @author Jonathan S. Otalora
+ * Data Access layer for bank accounts
+ */
 const {MongoClient, ObjectID} = require('mongodb');
 const {config} = require('./../../config');
 const {host, port, db} = config.persistence;
@@ -15,12 +19,12 @@ exports.fetchAccountById = (accountId, done) => {
 	MongoClient.connect(URL, (err, db) => {
 		if (err) {
 			done(initResult(err, null));
-			return db.close();
+			return;
 		}
 
 		const bankData = db.collection('bank_data');
 		bankData.find(
-			{_id: ObjectID(accountId)},
+			{_id: new ObjectID(accountId)},
 			{_id: 0}).toArray()
 		.then((docs) => {
 			done(initResult(null, docs));
@@ -35,7 +39,7 @@ exports.fetchAccountById = (accountId, done) => {
 
 exports.fetchByLastName = (lastName, done) => {
 	if (!lastName || !lastName.length) {
-		done(null, null);
+		done(initResult(err, nul));
 		return;
 	}
 
