@@ -4,8 +4,8 @@
   "description": "test node server with hapi.js && mongodb",
   "main": "index.js",
   "scripts": {
-    "server-dev": "nodemon index.js",
-    "server-debug": "iron-node index.js",
+    "server-prod": "nodemon index.js",
+    "server-dev": "nodemon --inspect index.js",
     "test": "node_modules/ .bin/mocha -w"
   },
   "keywords": [
